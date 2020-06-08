@@ -4,7 +4,10 @@
  */
 
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/post');
+var multer = require('multer');
+mongoose.connect('mongodb://localhost:3000', function(e){
+	
+});
 var Schema = mongoose.Schema;
 
 var contatoSchema = new Schema({
@@ -18,7 +21,7 @@ var conexoes = 0;
 exports.index = function(req, res){
 	conexoes++;
 	console.log(conexoes);
-	res.render('index', { title: 'Express' });
+	res.render('index', { title: 'Express teste' });
 };
 
 exports.adicionaContato = function(req, res) {
